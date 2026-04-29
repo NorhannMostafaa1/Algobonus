@@ -29,80 +29,11 @@ function normalizeNodes() {
   const minY = Math.min(...ys);
   const maxY = Math.max(...ys);
 
-  const nodes = data.nodes.map((node) => ({
+  return data.nodes.map((node) => ({
     ...node,
-    sx: 90 + ((node.x - minX) / (maxX - minX)) * 820,
-    sy: 510 - ((node.y - minY) / (maxY - minY)) * 390,
+    sx: 100 + ((node.x - minX) / (maxX - minX)) * 780,
+    sy: 460 - ((node.y - minY) / (maxY - minY)) * 340,
   }));
-
-  const coreNodes = nodes.filter(
-    (node) => node.sx > 260 && node.sx < 710 && node.sy > 100 && node.sy < 360
-  );
-  const centroid = {
-    x: coreNodes.reduce((sum, node) => sum + node.sx, 0) / coreNodes.length,
-    y: coreNodes.reduce((sum, node) => sum + node.sy, 0) / coreNodes.length,
-  };
-
-  for (const [index, node] of nodes.entries()) {
-    if (!coreNodes.includes(node)) continue;
-    let dx = node.sx - centroid.x;
-    let dy = node.sy - centroid.y;
-    let distance = Math.hypot(dx, dy);
-
-    if (distance < 1) {
-      const angle = (index / nodes.length) * Math.PI * 2;
-      dx = Math.cos(angle);
-      dy = Math.sin(angle);
-      distance = 1;
-    }
-
-    const expansion = Math.max(0, 165 - distance) * 0.42;
-    node.sx += (dx / distance) * expansion;
-    node.sy += (dy / distance) * expansion;
-  }
-
-  const anchorPositions = new Map(nodes.map((node) => [node.id, { x: node.sx, y: node.sy }]));
-
-  for (let step = 0; step < 160; step += 1) {
-    for (let i = 0; i < nodes.length; i += 1) {
-      const a = nodes[i];
-      const anchor = anchorPositions.get(a.id);
-      let shiftX = (anchor.x - a.sx) * 0.03;
-      let shiftY = (anchor.y - a.sy) * 0.03;
-
-      for (let j = i + 1; j < nodes.length; j += 1) {
-        const b = nodes[j];
-        const dx = a.sx - b.sx;
-        const dy = a.sy - b.sy;
-        const distance = Math.hypot(dx, dy) || 0.01;
-        const minDistance = a.id.startsWith("F") || b.id.startsWith("F") ? 42 : 48;
-
-        if (distance < minDistance) {
-          const force = ((minDistance - distance) / minDistance) * 3.8;
-          const pushX = (dx / distance) * force;
-          const pushY = (dy / distance) * force;
-          shiftX += pushX;
-          shiftY += pushY;
-          b.sx -= pushX;
-          b.sy -= pushY;
-        }
-      }
-
-      a.sx = Math.max(74, Math.min(930, a.sx + shiftX));
-      a.sy = Math.max(84, Math.min(514, a.sy + shiftY));
-    }
-  }
-
-  return nodes.map((node) => {
-    const angle = Math.atan2(node.sy - centroid.y, node.sx - centroid.x);
-    const labelSide = Math.cos(angle) >= 0 ? "right" : "left";
-    const labelWidth = Math.max(112, node.name.length * 6.45 + 36);
-    return {
-      ...node,
-      labelSide,
-      labelWidth,
-    };
-  });
 }
 
 const screenNodes = normalizeNodes();
@@ -135,7 +66,7 @@ function edgePath(fromNode, toNode, roadId) {
   const ny = dx / distance;
   const [leftId, rightId] = [fromNode.id, toNode.id].sort();
   const direction = roadId === `${leftId}-${rightId}` ? 1 : -1;
-  const bend = Math.min(40, Math.max(16, distance * 0.14)) * direction;
+  const bend = Math.min(28, distance * 0.12) * direction;
   const cx = (fromNode.sx + toNode.sx) / 2 + nx * bend;
   const cy = (fromNode.sy + toNode.sy) / 2 + ny * bend;
   return `M ${fromNode.sx} ${fromNode.sy} Q ${cx} ${cy} ${toNode.sx} ${toNode.sy}`;
@@ -196,7 +127,7 @@ function drawNetwork() {
   subcaption.setAttribute("x", "24");
   subcaption.setAttribute("y", "54");
   subcaption.setAttribute("class", "map-caption map-caption-subtle");
-  subcaption.textContent = "Dense central nodes are gently separated to improve readability.";
+  subcaption.textContent = "Positions stay anchored to the underlying Cairo coordinates.";
   networkSvg.appendChild(subcaption);
 
   for (const road of data.roads) {
@@ -230,36 +161,27 @@ function drawNetwork() {
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", node.sx);
     circle.setAttribute("cy", node.sy);
-    circle.setAttribute("r", node.id.startsWith("F") ? "7.5" : "10.5");
+    circle.setAttribute("r", node.id.startsWith("F") ? "8" : "10");
 
-    const labelX = node.labelSide === "right" ? node.sx + 14 : node.sx - node.labelWidth - 14;
+    const labelWidth = Math.max(58, node.name.length * 6.2 + 34);
     const labelBg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    labelBg.setAttribute("x", String(labelX));
-    labelBg.setAttribute("y", String(node.sy - 15));
-    labelBg.setAttribute("rx", "11");
-    labelBg.setAttribute("ry", "11");
-    labelBg.setAttribute("width", String(node.labelWidth));
-    labelBg.setAttribute("height", "28");
+    labelBg.setAttribute("x", node.sx + 10);
+    labelBg.setAttribute("y", node.sy - 16);
+    labelBg.setAttribute("rx", "10");
+    labelBg.setAttribute("ry", "10");
+    labelBg.setAttribute("width", String(labelWidth));
+    labelBg.setAttribute("height", "24");
     labelBg.setAttribute("class", "node-label-bg");
 
-    const leader = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    leader.setAttribute("x1", String(node.sx));
-    leader.setAttribute("y1", String(node.sy));
-    leader.setAttribute("x2", String(node.labelSide === "right" ? labelX : labelX + node.labelWidth));
-    leader.setAttribute("y2", String(node.sy - 1));
-    leader.setAttribute("class", "node-leader");
-
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    text.setAttribute("x", String(labelX + 11));
+    text.setAttribute("x", node.sx + 20);
     text.setAttribute("y", node.sy);
     text.setAttribute("dominant-baseline", "middle");
-    text.setAttribute("class", "node-name");
     text.textContent = `${node.id} ${node.name}`;
 
     const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
     title.textContent = `${node.name} (${node.id}) - ${node.type}`;
 
-    group.appendChild(leader);
     group.appendChild(circle);
     group.appendChild(labelBg);
     group.appendChild(text);
