@@ -14,13 +14,7 @@ This project turns the provided Cairo transport dataset into two connected exper
 ## Run it
 
 1. Regenerate the ML forecast data:
-
-```powershell
-C:\Users\USER\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\train_and_export.py
-```
-
-2. Open the dashboard in a browser by opening [index.html](C:\Users\USER\OneDrive\Documents\New project\index.html).
-
+train_and_export.py
+2. Open the dashboard in a browser by opening [index.html]
 ## Modeling note
-
 The source PDF provides four temporal traffic observations per road segment. The training script uses those baseline measurements as the core supervision signal, then creates small day-level temporal variations around them so the `scikit-learn` model can learn a smoother forecasting surface for scenario prediction.
