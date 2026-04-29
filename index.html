@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cairo Traffic Intelligence Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Urban Mobility Intelligence</p>
+          <h1>Cairo traffic forecasting with an algorithm race board.</h1>
+          <p class="lede">
+            ML predictions estimate congestion for each road segment, then Dijkstra and A* race side by side across the same live-weighted network.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <article>
+            <span>Model</span>
+            <strong id="modelName">Loading…</strong>
+          </article>
+          <article>
+            <span>MAE</span>
+            <strong id="modelMae">—</strong>
+          </article>
+          <article>
+            <span>R²</span>
+            <strong id="modelR2">—</strong>
+          </article>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel controls">
+          <div class="panel-heading">
+            <h2>Scenario Controls</h2>
+            <p>Pick a time slice, then launch both algorithms on the same predicted network.</p>
+          </div>
+          <label>
+            Scenario
+            <select id="scenarioSelect"></select>
+          </label>
+          <label>
+            Start
+            <select id="startSelect"></select>
+          </label>
+          <label>
+            Destination
+            <select id="endSelect"></select>
+          </label>
+          <div class="button-row">
+            <button id="raceButton">Run Race</button>
+            <button id="resetButton" class="ghost">Reset</button>
+          </div>
+          <div class="legend">
+            <span><i class="swatch low"></i>Low congestion</span>
+            <span><i class="swatch medium"></i>Moderate</span>
+            <span><i class="swatch high"></i>Heavy</span>
+            <span><i class="swatch extreme"></i>Critical</span>
+          </div>
+        </section>
+
+        <section class="panel insights">
+          <div class="panel-heading">
+            <h2>Forecast Highlights</h2>
+            <p>Most stressed segments for the selected scenario.</p>
+          </div>
+          <div id="hotspotCards" class="cards"></div>
+        </section>
+
+        <section class="panel board">
+          <div class="panel-heading">
+            <h2>Network View</h2>
+            <p>Edge color shows congestion, curved links separate busy corridors, and start/end pins stay highlighted.</p>
+          </div>
+          <div class="map-note">
+            <span><b>Districts</b> use larger ivory nodes.</span>
+            <span><b>Facilities</b> use smaller blue nodes.</span>
+            <span><b>Hover</b> any road or node for details.</span>
+          </div>
+          <svg id="networkSvg" viewBox="0 0 980 560" aria-label="Traffic network map"></svg>
+        </section>
+
+        <section class="panel algorithm">
+          <div class="panel-heading">
+            <h2>Dijkstra</h2>
+            <p>Guaranteed shortest path under the active travel-cost weights.</p>
+          </div>
+          <div id="dijkstraStats" class="stat-box"></div>
+          <div id="dijkstraLog" class="log"></div>
+        </section>
+
+        <section class="panel algorithm">
+          <div class="panel-heading">
+            <h2>A*</h2>
+            <p>Uses straight-line distance to focus the search toward the target.</p>
+          </div>
+          <div id="astarStats" class="stat-box"></div>
+          <div id="astarLog" class="log"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="data/generated/app-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

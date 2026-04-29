@@ -1,0 +1,1925 @@
+window.APP_DATA = {
+  "metadata": {
+    "city": "Cairo",
+    "dataset_source": "CSE112 Project Provided Data PDF",
+    "model": "RandomForestRegressor (scikit-learn)",
+    "metrics": {
+      "mae": 96.86,
+      "r2": 0.976,
+      "training_rows": 1512,
+      "test_rows": 303
+    }
+  },
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Maadi",
+      "type": "Residential",
+      "population": 250000,
+      "x": 31.25,
+      "y": 29.96
+    },
+    {
+      "id": "2",
+      "name": "Nasr City",
+      "type": "Mixed",
+      "population": 500000,
+      "x": 31.34,
+      "y": 30.06
+    },
+    {
+      "id": "3",
+      "name": "Downtown Cairo",
+      "type": "Business",
+      "population": 100000,
+      "x": 31.24,
+      "y": 30.04
+    },
+    {
+      "id": "4",
+      "name": "New Cairo",
+      "type": "Residential",
+      "population": 300000,
+      "x": 31.47,
+      "y": 30.03
+    },
+    {
+      "id": "5",
+      "name": "Heliopolis",
+      "type": "Mixed",
+      "population": 200000,
+      "x": 31.32,
+      "y": 30.09
+    },
+    {
+      "id": "6",
+      "name": "Zamalek",
+      "type": "Residential",
+      "population": 50000,
+      "x": 31.22,
+      "y": 30.06
+    },
+    {
+      "id": "7",
+      "name": "6th October City",
+      "type": "Mixed",
+      "population": 400000,
+      "x": 30.98,
+      "y": 29.93
+    },
+    {
+      "id": "8",
+      "name": "Giza",
+      "type": "Mixed",
+      "population": 550000,
+      "x": 31.21,
+      "y": 29.99
+    },
+    {
+      "id": "9",
+      "name": "Mohandessin",
+      "type": "Business",
+      "population": 180000,
+      "x": 31.2,
+      "y": 30.05
+    },
+    {
+      "id": "10",
+      "name": "Dokki",
+      "type": "Mixed",
+      "population": 220000,
+      "x": 31.21,
+      "y": 30.03
+    },
+    {
+      "id": "11",
+      "name": "Shubra",
+      "type": "Residential",
+      "population": 450000,
+      "x": 31.24,
+      "y": 30.11
+    },
+    {
+      "id": "12",
+      "name": "Helwan",
+      "type": "Industrial",
+      "population": 350000,
+      "x": 31.33,
+      "y": 29.85
+    },
+    {
+      "id": "13",
+      "name": "New Administrative Capital",
+      "type": "Government",
+      "population": 50000,
+      "x": 31.8,
+      "y": 30.02
+    },
+    {
+      "id": "14",
+      "name": "Al Rehab",
+      "type": "Residential",
+      "population": 120000,
+      "x": 31.49,
+      "y": 30.06
+    },
+    {
+      "id": "15",
+      "name": "Sheikh Zayed",
+      "type": "Residential",
+      "population": 150000,
+      "x": 30.94,
+      "y": 30.01
+    },
+    {
+      "id": "F1",
+      "name": "Cairo International Airport",
+      "type": "Airport",
+      "population": 0,
+      "x": 31.41,
+      "y": 30.11
+    },
+    {
+      "id": "F2",
+      "name": "Ramses Railway Station",
+      "type": "Transit Hub",
+      "population": 0,
+      "x": 31.25,
+      "y": 30.06
+    },
+    {
+      "id": "F3",
+      "name": "Cairo University",
+      "type": "Education",
+      "population": 0,
+      "x": 31.21,
+      "y": 30.03
+    },
+    {
+      "id": "F4",
+      "name": "Al-Azhar University",
+      "type": "Education",
+      "population": 0,
+      "x": 31.26,
+      "y": 30.05
+    },
+    {
+      "id": "F5",
+      "name": "Egyptian Museum",
+      "type": "Tourism",
+      "population": 0,
+      "x": 31.23,
+      "y": 30.05
+    },
+    {
+      "id": "F6",
+      "name": "Cairo International Stadium",
+      "type": "Sports",
+      "population": 0,
+      "x": 31.3,
+      "y": 30.07
+    },
+    {
+      "id": "F7",
+      "name": "Smart Village",
+      "type": "Business",
+      "population": 0,
+      "x": 30.97,
+      "y": 30.07
+    },
+    {
+      "id": "F8",
+      "name": "Cairo Festival City",
+      "type": "Commercial",
+      "population": 0,
+      "x": 31.4,
+      "y": 30.03
+    },
+    {
+      "id": "F9",
+      "name": "Qasr El Aini Hospital",
+      "type": "Medical",
+      "population": 0,
+      "x": 31.23,
+      "y": 30.03
+    },
+    {
+      "id": "F10",
+      "name": "Maadi Military Hospital",
+      "type": "Medical",
+      "population": 0,
+      "x": 31.25,
+      "y": 29.95
+    }
+  ],
+  "roads": [
+    {
+      "id": "1-3",
+      "from": "1",
+      "to": "3",
+      "distance_km": 8.5,
+      "capacity_vph": 3000,
+      "condition": 7,
+      "degree_sum": 10,
+      "from_population": 250000,
+      "to_population": 100000,
+      "population_sum": 350000,
+      "from_type": "Residential",
+      "to_type": "Business"
+    },
+    {
+      "id": "1-8",
+      "from": "1",
+      "to": "8",
+      "distance_km": 6.2,
+      "capacity_vph": 2500,
+      "condition": 6,
+      "degree_sum": 7,
+      "from_population": 250000,
+      "to_population": 550000,
+      "population_sum": 800000,
+      "from_type": "Residential",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "2-3",
+      "from": "2",
+      "to": "3",
+      "distance_km": 5.9,
+      "capacity_vph": 2800,
+      "condition": 8,
+      "degree_sum": 11,
+      "from_population": 500000,
+      "to_population": 100000,
+      "population_sum": 600000,
+      "from_type": "Mixed",
+      "to_type": "Business"
+    },
+    {
+      "id": "2-5",
+      "from": "2",
+      "to": "5",
+      "distance_km": 4.0,
+      "capacity_vph": 3200,
+      "condition": 9,
+      "degree_sum": 8,
+      "from_population": 500000,
+      "to_population": 200000,
+      "population_sum": 700000,
+      "from_type": "Mixed",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "3-5",
+      "from": "3",
+      "to": "5",
+      "distance_km": 6.1,
+      "capacity_vph": 3500,
+      "condition": 7,
+      "degree_sum": 11,
+      "from_population": 100000,
+      "to_population": 200000,
+      "population_sum": 300000,
+      "from_type": "Business",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "3-6",
+      "from": "3",
+      "to": "6",
+      "distance_km": 3.2,
+      "capacity_vph": 2000,
+      "condition": 8,
+      "degree_sum": 9,
+      "from_population": 100000,
+      "to_population": 50000,
+      "population_sum": 150000,
+      "from_type": "Business",
+      "to_type": "Residential"
+    },
+    {
+      "id": "3-9",
+      "from": "3",
+      "to": "9",
+      "distance_km": 4.5,
+      "capacity_vph": 2600,
+      "condition": 6,
+      "degree_sum": 10,
+      "from_population": 100000,
+      "to_population": 180000,
+      "population_sum": 280000,
+      "from_type": "Business",
+      "to_type": "Business"
+    },
+    {
+      "id": "3-10",
+      "from": "3",
+      "to": "10",
+      "distance_km": 3.8,
+      "capacity_vph": 2400,
+      "condition": 7,
+      "degree_sum": 11,
+      "from_population": 100000,
+      "to_population": 220000,
+      "population_sum": 320000,
+      "from_type": "Business",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "2-4",
+      "from": "4",
+      "to": "2",
+      "distance_km": 15.2,
+      "capacity_vph": 3800,
+      "condition": 9,
+      "degree_sum": 8,
+      "from_population": 300000,
+      "to_population": 500000,
+      "population_sum": 800000,
+      "from_type": "Residential",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "4-14",
+      "from": "4",
+      "to": "14",
+      "distance_km": 5.3,
+      "capacity_vph": 3000,
+      "condition": 10,
+      "degree_sum": 6,
+      "from_population": 300000,
+      "to_population": 120000,
+      "population_sum": 420000,
+      "from_type": "Residential",
+      "to_type": "Residential"
+    },
+    {
+      "id": "5-11",
+      "from": "5",
+      "to": "11",
+      "distance_km": 7.9,
+      "capacity_vph": 3100,
+      "condition": 7,
+      "degree_sum": 7,
+      "from_population": 200000,
+      "to_population": 450000,
+      "population_sum": 650000,
+      "from_type": "Mixed",
+      "to_type": "Residential"
+    },
+    {
+      "id": "6-9",
+      "from": "6",
+      "to": "9",
+      "distance_km": 2.2,
+      "capacity_vph": 1800,
+      "condition": 8,
+      "degree_sum": 5,
+      "from_population": 50000,
+      "to_population": 180000,
+      "population_sum": 230000,
+      "from_type": "Residential",
+      "to_type": "Business"
+    },
+    {
+      "id": "7-8",
+      "from": "7",
+      "to": "8",
+      "distance_km": 24.5,
+      "capacity_vph": 3500,
+      "condition": 8,
+      "degree_sum": 6,
+      "from_population": 400000,
+      "to_population": 550000,
+      "population_sum": 950000,
+      "from_type": "Mixed",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "7-15",
+      "from": "7",
+      "to": "15",
+      "distance_km": 9.8,
+      "capacity_vph": 3000,
+      "condition": 9,
+      "degree_sum": 4,
+      "from_population": 400000,
+      "to_population": 150000,
+      "population_sum": 550000,
+      "from_type": "Mixed",
+      "to_type": "Residential"
+    },
+    {
+      "id": "8-10",
+      "from": "8",
+      "to": "10",
+      "distance_km": 3.3,
+      "capacity_vph": 2200,
+      "condition": 7,
+      "degree_sum": 8,
+      "from_population": 550000,
+      "to_population": 220000,
+      "population_sum": 770000,
+      "from_type": "Mixed",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "8-12",
+      "from": "8",
+      "to": "12",
+      "distance_km": 14.8,
+      "capacity_vph": 2600,
+      "condition": 5,
+      "degree_sum": 6,
+      "from_population": 550000,
+      "to_population": 350000,
+      "population_sum": 900000,
+      "from_type": "Mixed",
+      "to_type": "Industrial"
+    },
+    {
+      "id": "9-10",
+      "from": "9",
+      "to": "10",
+      "distance_km": 2.1,
+      "capacity_vph": 1900,
+      "condition": 7,
+      "degree_sum": 7,
+      "from_population": 180000,
+      "to_population": 220000,
+      "population_sum": 400000,
+      "from_type": "Business",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "10-11",
+      "from": "10",
+      "to": "11",
+      "distance_km": 8.7,
+      "capacity_vph": 2400,
+      "condition": 6,
+      "degree_sum": 7,
+      "from_population": 220000,
+      "to_population": 450000,
+      "population_sum": 670000,
+      "from_type": "Mixed",
+      "to_type": "Residential"
+    },
+    {
+      "id": "11-F2",
+      "from": "11",
+      "to": "F2",
+      "distance_km": 3.6,
+      "capacity_vph": 2200,
+      "condition": 7,
+      "degree_sum": 5,
+      "from_population": 450000,
+      "to_population": 0,
+      "population_sum": 450000,
+      "from_type": "Residential",
+      "to_type": "Transit Hub"
+    },
+    {
+      "id": "1-12",
+      "from": "12",
+      "to": "1",
+      "distance_km": 12.7,
+      "capacity_vph": 2800,
+      "condition": 6,
+      "degree_sum": 5,
+      "from_population": 350000,
+      "to_population": 250000,
+      "population_sum": 600000,
+      "from_type": "Industrial",
+      "to_type": "Residential"
+    },
+    {
+      "id": "4-13",
+      "from": "13",
+      "to": "4",
+      "distance_km": 45.0,
+      "capacity_vph": 4000,
+      "condition": 10,
+      "degree_sum": 6,
+      "from_population": 50000,
+      "to_population": 300000,
+      "population_sum": 350000,
+      "from_type": "Government",
+      "to_type": "Residential"
+    },
+    {
+      "id": "13-14",
+      "from": "14",
+      "to": "13",
+      "distance_km": 35.5,
+      "capacity_vph": 3800,
+      "condition": 9,
+      "degree_sum": 4,
+      "from_population": 120000,
+      "to_population": 50000,
+      "population_sum": 170000,
+      "from_type": "Residential",
+      "to_type": "Government"
+    },
+    {
+      "id": "5-F1",
+      "from": "F1",
+      "to": "5",
+      "distance_km": 7.5,
+      "capacity_vph": 3500,
+      "condition": 9,
+      "degree_sum": 6,
+      "from_population": 0,
+      "to_population": 200000,
+      "population_sum": 200000,
+      "from_type": "Airport",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "2-F1",
+      "from": "F1",
+      "to": "2",
+      "distance_km": 9.2,
+      "capacity_vph": 3200,
+      "condition": 8,
+      "degree_sum": 6,
+      "from_population": 0,
+      "to_population": 500000,
+      "population_sum": 500000,
+      "from_type": "Airport",
+      "to_type": "Mixed"
+    },
+    {
+      "id": "3-F2",
+      "from": "F2",
+      "to": "3",
+      "distance_km": 2.5,
+      "capacity_vph": 2000,
+      "condition": 7,
+      "degree_sum": 9,
+      "from_population": 0,
+      "to_population": 100000,
+      "population_sum": 100000,
+      "from_type": "Transit Hub",
+      "to_type": "Business"
+    },
+    {
+      "id": "15-F7",
+      "from": "F7",
+      "to": "15",
+      "distance_km": 8.3,
+      "capacity_vph": 2800,
+      "condition": 8,
+      "degree_sum": 3,
+      "from_population": 0,
+      "to_population": 150000,
+      "population_sum": 150000,
+      "from_type": "Business",
+      "to_type": "Residential"
+    },
+    {
+      "id": "4-F8",
+      "from": "F8",
+      "to": "4",
+      "distance_km": 6.1,
+      "capacity_vph": 3000,
+      "condition": 9,
+      "degree_sum": 5,
+      "from_population": 0,
+      "to_population": 300000,
+      "population_sum": 300000,
+      "from_type": "Commercial",
+      "to_type": "Residential"
+    }
+  ],
+  "predictions": {
+    "Morning Peak": [
+      {
+        "road_id": "1-3",
+        "from_id": "1",
+        "to_id": "3",
+        "predicted_flow_vph": 2723.8,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.908,
+        "travel_cost": 0.433
+      },
+      {
+        "road_id": "1-8",
+        "from_id": "1",
+        "to_id": "8",
+        "predicted_flow_vph": 2117.4,
+        "capacity_vph": 2500,
+        "congestion_ratio": 0.847,
+        "travel_cost": 0.297
+      },
+      {
+        "road_id": "2-3",
+        "from_id": "2",
+        "to_id": "3",
+        "predicted_flow_vph": 2723.2,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.973,
+        "travel_cost": 0.32
+      },
+      {
+        "road_id": "2-5",
+        "from_id": "2",
+        "to_id": "5",
+        "predicted_flow_vph": 2915.4,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.911,
+        "travel_cost": 0.197
+      },
+      {
+        "road_id": "3-5",
+        "from_id": "3",
+        "to_id": "5",
+        "predicted_flow_vph": 3175.7,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.907,
+        "travel_cost": 0.311
+      },
+      {
+        "road_id": "3-6",
+        "from_id": "3",
+        "to_id": "6",
+        "predicted_flow_vph": 1860.2,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.93,
+        "travel_cost": 0.165
+      },
+      {
+        "road_id": "3-9",
+        "from_id": "3",
+        "to_id": "9",
+        "predicted_flow_vph": 2372.8,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.913,
+        "travel_cost": 0.235
+      },
+      {
+        "road_id": "3-10",
+        "from_id": "3",
+        "to_id": "10",
+        "predicted_flow_vph": 2147.3,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.895,
+        "travel_cost": 0.19
+      },
+      {
+        "road_id": "2-4",
+        "from_id": "4",
+        "to_id": "2",
+        "predicted_flow_vph": 3625.3,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.954,
+        "travel_cost": 0.793
+      },
+      {
+        "road_id": "4-14",
+        "from_id": "4",
+        "to_id": "14",
+        "predicted_flow_vph": 2733.5,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.911,
+        "travel_cost": 0.256
+      },
+      {
+        "road_id": "5-11",
+        "from_id": "5",
+        "to_id": "11",
+        "predicted_flow_vph": 2862.9,
+        "capacity_vph": 3100,
+        "congestion_ratio": 0.924,
+        "travel_cost": 0.411
+      },
+      {
+        "road_id": "6-9",
+        "from_id": "6",
+        "to_id": "9",
+        "predicted_flow_vph": 1750.7,
+        "capacity_vph": 1800,
+        "congestion_ratio": 0.973,
+        "travel_cost": 0.119
+      },
+      {
+        "road_id": "7-8",
+        "from_id": "7",
+        "to_id": "8",
+        "predicted_flow_vph": 3080.4,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.88,
+        "travel_cost": 1.182
+      },
+      {
+        "road_id": "7-15",
+        "from_id": "7",
+        "to_id": "15",
+        "predicted_flow_vph": 2638.5,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.879,
+        "travel_cost": 0.463
+      },
+      {
+        "road_id": "8-10",
+        "from_id": "8",
+        "to_id": "10",
+        "predicted_flow_vph": 2044.9,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.929,
+        "travel_cost": 0.173
+      },
+      {
+        "road_id": "8-12",
+        "from_id": "8",
+        "to_id": "12",
+        "predicted_flow_vph": 2354.9,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.906,
+        "travel_cost": 0.78
+      },
+      {
+        "road_id": "9-10",
+        "from_id": "9",
+        "to_id": "10",
+        "predicted_flow_vph": 1758.0,
+        "capacity_vph": 1900,
+        "congestion_ratio": 0.925,
+        "travel_cost": 0.109
+      },
+      {
+        "road_id": "10-11",
+        "from_id": "10",
+        "to_id": "11",
+        "predicted_flow_vph": 2125.8,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.886,
+        "travel_cost": 0.439
+      },
+      {
+        "road_id": "11-F2",
+        "from_id": "11",
+        "to_id": "F2",
+        "predicted_flow_vph": 2086.1,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.948,
+        "travel_cost": 0.193
+      },
+      {
+        "road_id": "1-12",
+        "from_id": "12",
+        "to_id": "1",
+        "predicted_flow_vph": 2595.3,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.927,
+        "travel_cost": 0.675
+      },
+      {
+        "road_id": "4-13",
+        "from_id": "13",
+        "to_id": "4",
+        "predicted_flow_vph": 3661.7,
+        "capacity_vph": 4000,
+        "congestion_ratio": 0.915,
+        "travel_cost": 2.19
+      },
+      {
+        "road_id": "13-14",
+        "from_id": "14",
+        "to_id": "13",
+        "predicted_flow_vph": 3563.7,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.938,
+        "travel_cost": 1.813
+      },
+      {
+        "road_id": "5-F1",
+        "from_id": "F1",
+        "to_id": "5",
+        "predicted_flow_vph": 3122.9,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.892,
+        "travel_cost": 0.361
+      },
+      {
+        "road_id": "2-F1",
+        "from_id": "F1",
+        "to_id": "2",
+        "predicted_flow_vph": 2956.2,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.924,
+        "travel_cost": 0.47
+      },
+      {
+        "road_id": "3-F2",
+        "from_id": "F2",
+        "to_id": "3",
+        "predicted_flow_vph": 1963.2,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.982,
+        "travel_cost": 0.14
+      },
+      {
+        "road_id": "15-F7",
+        "from_id": "F7",
+        "to_id": "15",
+        "predicted_flow_vph": 2571.4,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.918,
+        "travel_cost": 0.421
+      },
+      {
+        "road_id": "4-F8",
+        "from_id": "F8",
+        "to_id": "4",
+        "predicted_flow_vph": 2743.1,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.914,
+        "travel_cost": 0.302
+      }
+    ],
+    "Afternoon": [
+      {
+        "road_id": "1-3",
+        "from_id": "1",
+        "to_id": "3",
+        "predicted_flow_vph": 1504.6,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.502,
+        "travel_cost": 0.29
+      },
+      {
+        "road_id": "1-8",
+        "from_id": "1",
+        "to_id": "8",
+        "predicted_flow_vph": 1249.1,
+        "capacity_vph": 2500,
+        "congestion_ratio": 0.5,
+        "travel_cost": 0.217
+      },
+      {
+        "road_id": "2-3",
+        "from_id": "2",
+        "to_id": "3",
+        "predicted_flow_vph": 1402.5,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.501,
+        "travel_cost": 0.195
+      },
+      {
+        "road_id": "2-5",
+        "from_id": "2",
+        "to_id": "5",
+        "predicted_flow_vph": 1675.1,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.523,
+        "travel_cost": 0.129
+      },
+      {
+        "road_id": "3-5",
+        "from_id": "3",
+        "to_id": "5",
+        "predicted_flow_vph": 1702.5,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.486,
+        "travel_cost": 0.208
+      },
+      {
+        "road_id": "3-6",
+        "from_id": "3",
+        "to_id": "6",
+        "predicted_flow_vph": 1375.8,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.688,
+        "travel_cost": 0.114
+      },
+      {
+        "road_id": "3-9",
+        "from_id": "3",
+        "to_id": "9",
+        "predicted_flow_vph": 1343.6,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.517,
+        "travel_cost": 0.158
+      },
+      {
+        "road_id": "3-10",
+        "from_id": "3",
+        "to_id": "10",
+        "predicted_flow_vph": 1227.6,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.511,
+        "travel_cost": 0.129
+      },
+      {
+        "road_id": "2-4",
+        "from_id": "4",
+        "to_id": "2",
+        "predicted_flow_vph": 1846.6,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.486,
+        "travel_cost": 0.489
+      },
+      {
+        "road_id": "4-14",
+        "from_id": "4",
+        "to_id": "14",
+        "predicted_flow_vph": 1666.8,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.556,
+        "travel_cost": 0.166
+      },
+      {
+        "road_id": "5-11",
+        "from_id": "5",
+        "to_id": "11",
+        "predicted_flow_vph": 1457.9,
+        "capacity_vph": 3100,
+        "congestion_ratio": 0.47,
+        "travel_cost": 0.269
+      },
+      {
+        "road_id": "6-9",
+        "from_id": "6",
+        "to_id": "9",
+        "predicted_flow_vph": 1325.6,
+        "capacity_vph": 1800,
+        "congestion_ratio": 0.736,
+        "travel_cost": 0.085
+      },
+      {
+        "road_id": "7-8",
+        "from_id": "7",
+        "to_id": "8",
+        "predicted_flow_vph": 1744.4,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.498,
+        "travel_cost": 0.812
+      },
+      {
+        "road_id": "7-15",
+        "from_id": "7",
+        "to_id": "15",
+        "predicted_flow_vph": 1475.3,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.492,
+        "travel_cost": 0.315
+      },
+      {
+        "road_id": "8-10",
+        "from_id": "8",
+        "to_id": "10",
+        "predicted_flow_vph": 1095.1,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.498,
+        "travel_cost": 0.112
+      },
+      {
+        "road_id": "8-12",
+        "from_id": "8",
+        "to_id": "12",
+        "predicted_flow_vph": 1358.7,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.523,
+        "travel_cost": 0.532
+      },
+      {
+        "road_id": "9-10",
+        "from_id": "9",
+        "to_id": "10",
+        "predicted_flow_vph": 1261.0,
+        "capacity_vph": 1900,
+        "congestion_ratio": 0.664,
+        "travel_cost": 0.073
+      },
+      {
+        "road_id": "10-11",
+        "from_id": "10",
+        "to_id": "11",
+        "predicted_flow_vph": 1353.8,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.564,
+        "travel_cost": 0.304
+      },
+      {
+        "road_id": "11-F2",
+        "from_id": "11",
+        "to_id": "F2",
+        "predicted_flow_vph": 1230.9,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.559,
+        "travel_cost": 0.123
+      },
+      {
+        "road_id": "1-12",
+        "from_id": "12",
+        "to_id": "1",
+        "predicted_flow_vph": 1404.6,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.502,
+        "travel_cost": 0.444
+      },
+      {
+        "road_id": "4-13",
+        "from_id": "13",
+        "to_id": "4",
+        "predicted_flow_vph": 2027.6,
+        "capacity_vph": 4000,
+        "congestion_ratio": 0.507,
+        "travel_cost": 1.406
+      },
+      {
+        "road_id": "13-14",
+        "from_id": "14",
+        "to_id": "13",
+        "predicted_flow_vph": 1956.0,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.515,
+        "travel_cost": 1.143
+      },
+      {
+        "road_id": "5-F1",
+        "from_id": "F1",
+        "to_id": "5",
+        "predicted_flow_vph": 2174.0,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.621,
+        "travel_cost": 0.241
+      },
+      {
+        "road_id": "2-F1",
+        "from_id": "F1",
+        "to_id": "2",
+        "predicted_flow_vph": 2035.1,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.636,
+        "travel_cost": 0.305
+      },
+      {
+        "road_id": "3-F2",
+        "from_id": "F2",
+        "to_id": "3",
+        "predicted_flow_vph": 1648.3,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.824,
+        "travel_cost": 0.114
+      },
+      {
+        "road_id": "15-F7",
+        "from_id": "F7",
+        "to_id": "15",
+        "predicted_flow_vph": 1535.5,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.548,
+        "travel_cost": 0.275
+      },
+      {
+        "road_id": "4-F8",
+        "from_id": "F8",
+        "to_id": "4",
+        "predicted_flow_vph": 1577.5,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.526,
+        "travel_cost": 0.196
+      }
+    ],
+    "Evening Peak": [
+      {
+        "road_id": "1-3",
+        "from_id": "1",
+        "to_id": "3",
+        "predicted_flow_vph": 2517.7,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.839,
+        "travel_cost": 0.395
+      },
+      {
+        "road_id": "1-8",
+        "from_id": "1",
+        "to_id": "8",
+        "predicted_flow_vph": 2049.5,
+        "capacity_vph": 2500,
+        "congestion_ratio": 0.82,
+        "travel_cost": 0.286
+      },
+      {
+        "road_id": "2-3",
+        "from_id": "2",
+        "to_id": "3",
+        "predicted_flow_vph": 2495.3,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.891,
+        "travel_cost": 0.289
+      },
+      {
+        "road_id": "2-5",
+        "from_id": "2",
+        "to_id": "5",
+        "predicted_flow_vph": 2872.0,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.897,
+        "travel_cost": 0.194
+      },
+      {
+        "road_id": "3-5",
+        "from_id": "3",
+        "to_id": "5",
+        "predicted_flow_vph": 3192.7,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.912,
+        "travel_cost": 0.313
+      },
+      {
+        "road_id": "3-6",
+        "from_id": "3",
+        "to_id": "6",
+        "predicted_flow_vph": 1812.6,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.906,
+        "travel_cost": 0.16
+      },
+      {
+        "road_id": "3-9",
+        "from_id": "3",
+        "to_id": "9",
+        "predicted_flow_vph": 2210.3,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.85,
+        "travel_cost": 0.217
+      },
+      {
+        "road_id": "3-10",
+        "from_id": "3",
+        "to_id": "10",
+        "predicted_flow_vph": 2089.8,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.871,
+        "travel_cost": 0.184
+      },
+      {
+        "road_id": "2-4",
+        "from_id": "4",
+        "to_id": "2",
+        "predicted_flow_vph": 3221.9,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.848,
+        "travel_cost": 0.687
+      },
+      {
+        "road_id": "4-14",
+        "from_id": "4",
+        "to_id": "14",
+        "predicted_flow_vph": 2562.3,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.854,
+        "travel_cost": 0.237
+      },
+      {
+        "road_id": "5-11",
+        "from_id": "5",
+        "to_id": "11",
+        "predicted_flow_vph": 2701.7,
+        "capacity_vph": 3100,
+        "congestion_ratio": 0.872,
+        "travel_cost": 0.384
+      },
+      {
+        "road_id": "6-9",
+        "from_id": "6",
+        "to_id": "9",
+        "predicted_flow_vph": 1689.6,
+        "capacity_vph": 1800,
+        "congestion_ratio": 0.939,
+        "travel_cost": 0.115
+      },
+      {
+        "road_id": "7-8",
+        "from_id": "7",
+        "to_id": "8",
+        "predicted_flow_vph": 3103.8,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.887,
+        "travel_cost": 1.192
+      },
+      {
+        "road_id": "7-15",
+        "from_id": "7",
+        "to_id": "15",
+        "predicted_flow_vph": 2581.8,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.861,
+        "travel_cost": 0.451
+      },
+      {
+        "road_id": "8-10",
+        "from_id": "8",
+        "to_id": "10",
+        "predicted_flow_vph": 1941.0,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.882,
+        "travel_cost": 0.163
+      },
+      {
+        "road_id": "8-12",
+        "from_id": "8",
+        "to_id": "12",
+        "predicted_flow_vph": 2212.0,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.851,
+        "travel_cost": 0.727
+      },
+      {
+        "road_id": "9-10",
+        "from_id": "9",
+        "to_id": "10",
+        "predicted_flow_vph": 1687.5,
+        "capacity_vph": 1900,
+        "congestion_ratio": 0.888,
+        "travel_cost": 0.104
+      },
+      {
+        "road_id": "10-11",
+        "from_id": "10",
+        "to_id": "11",
+        "predicted_flow_vph": 2063.7,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.86,
+        "travel_cost": 0.424
+      },
+      {
+        "road_id": "11-F2",
+        "from_id": "11",
+        "to_id": "F2",
+        "predicted_flow_vph": 1970.7,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.896,
+        "travel_cost": 0.181
+      },
+      {
+        "road_id": "1-12",
+        "from_id": "12",
+        "to_id": "1",
+        "predicted_flow_vph": 2401.7,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.858,
+        "travel_cost": 0.618
+      },
+      {
+        "road_id": "4-13",
+        "from_id": "13",
+        "to_id": "4",
+        "predicted_flow_vph": 3504.4,
+        "capacity_vph": 4000,
+        "congestion_ratio": 0.876,
+        "travel_cost": 2.074
+      },
+      {
+        "road_id": "13-14",
+        "from_id": "14",
+        "to_id": "13",
+        "predicted_flow_vph": 3255.6,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.857,
+        "travel_cost": 1.624
+      },
+      {
+        "road_id": "5-F1",
+        "from_id": "F1",
+        "to_id": "5",
+        "predicted_flow_vph": 3149.3,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.9,
+        "travel_cost": 0.364
+      },
+      {
+        "road_id": "2-F1",
+        "from_id": "F1",
+        "to_id": "2",
+        "predicted_flow_vph": 2853.7,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.892,
+        "travel_cost": 0.451
+      },
+      {
+        "road_id": "3-F2",
+        "from_id": "F2",
+        "to_id": "3",
+        "predicted_flow_vph": 1825.8,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.913,
+        "travel_cost": 0.128
+      },
+      {
+        "road_id": "15-F7",
+        "from_id": "F7",
+        "to_id": "15",
+        "predicted_flow_vph": 2398.2,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.856,
+        "travel_cost": 0.387
+      },
+      {
+        "road_id": "4-F8",
+        "from_id": "F8",
+        "to_id": "4",
+        "predicted_flow_vph": 2602.9,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.868,
+        "travel_cost": 0.283
+      }
+    ],
+    "Night": [
+      {
+        "road_id": "1-3",
+        "from_id": "1",
+        "to_id": "3",
+        "predicted_flow_vph": 812.3,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.271,
+        "travel_cost": 0.29
+      },
+      {
+        "road_id": "1-8",
+        "from_id": "1",
+        "to_id": "8",
+        "predicted_flow_vph": 617.7,
+        "capacity_vph": 2500,
+        "congestion_ratio": 0.247,
+        "travel_cost": 0.217
+      },
+      {
+        "road_id": "2-3",
+        "from_id": "2",
+        "to_id": "3",
+        "predicted_flow_vph": 704.7,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.252,
+        "travel_cost": 0.195
+      },
+      {
+        "road_id": "2-5",
+        "from_id": "2",
+        "to_id": "5",
+        "predicted_flow_vph": 640.7,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.2,
+        "travel_cost": 0.129
+      },
+      {
+        "road_id": "3-5",
+        "from_id": "3",
+        "to_id": "5",
+        "predicted_flow_vph": 811.1,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.232,
+        "travel_cost": 0.208
+      },
+      {
+        "road_id": "3-6",
+        "from_id": "3",
+        "to_id": "6",
+        "predicted_flow_vph": 506.6,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.253,
+        "travel_cost": 0.106
+      },
+      {
+        "road_id": "3-9",
+        "from_id": "3",
+        "to_id": "9",
+        "predicted_flow_vph": 531.2,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.204,
+        "travel_cost": 0.158
+      },
+      {
+        "road_id": "3-10",
+        "from_id": "3",
+        "to_id": "10",
+        "predicted_flow_vph": 514.8,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.214,
+        "travel_cost": 0.129
+      },
+      {
+        "road_id": "2-4",
+        "from_id": "4",
+        "to_id": "2",
+        "predicted_flow_vph": 764.8,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.201,
+        "travel_cost": 0.489
+      },
+      {
+        "road_id": "4-14",
+        "from_id": "4",
+        "to_id": "14",
+        "predicted_flow_vph": 629.8,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.21,
+        "travel_cost": 0.166
+      },
+      {
+        "road_id": "5-11",
+        "from_id": "5",
+        "to_id": "11",
+        "predicted_flow_vph": 635.9,
+        "capacity_vph": 3100,
+        "congestion_ratio": 0.205,
+        "travel_cost": 0.269
+      },
+      {
+        "road_id": "6-9",
+        "from_id": "6",
+        "to_id": "9",
+        "predicted_flow_vph": 447.6,
+        "capacity_vph": 1800,
+        "congestion_ratio": 0.249,
+        "travel_cost": 0.073
+      },
+      {
+        "road_id": "7-8",
+        "from_id": "7",
+        "to_id": "8",
+        "predicted_flow_vph": 714.5,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.204,
+        "travel_cost": 0.812
+      },
+      {
+        "road_id": "7-15",
+        "from_id": "7",
+        "to_id": "15",
+        "predicted_flow_vph": 606.0,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.202,
+        "travel_cost": 0.315
+      },
+      {
+        "road_id": "8-10",
+        "from_id": "8",
+        "to_id": "10",
+        "predicted_flow_vph": 460.1,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.209,
+        "travel_cost": 0.112
+      },
+      {
+        "road_id": "8-12",
+        "from_id": "8",
+        "to_id": "12",
+        "predicted_flow_vph": 523.5,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.201,
+        "travel_cost": 0.532
+      },
+      {
+        "road_id": "9-10",
+        "from_id": "9",
+        "to_id": "10",
+        "predicted_flow_vph": 383.8,
+        "capacity_vph": 1900,
+        "congestion_ratio": 0.202,
+        "travel_cost": 0.072
+      },
+      {
+        "road_id": "10-11",
+        "from_id": "10",
+        "to_id": "11",
+        "predicted_flow_vph": 500.0,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.208,
+        "travel_cost": 0.304
+      },
+      {
+        "road_id": "11-F2",
+        "from_id": "11",
+        "to_id": "F2",
+        "predicted_flow_vph": 467.5,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.212,
+        "travel_cost": 0.123
+      },
+      {
+        "road_id": "1-12",
+        "from_id": "12",
+        "to_id": "1",
+        "predicted_flow_vph": 541.5,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.193,
+        "travel_cost": 0.444
+      },
+      {
+        "road_id": "4-13",
+        "from_id": "13",
+        "to_id": "4",
+        "predicted_flow_vph": 829.8,
+        "capacity_vph": 4000,
+        "congestion_ratio": 0.207,
+        "travel_cost": 1.406
+      },
+      {
+        "road_id": "13-14",
+        "from_id": "14",
+        "to_id": "13",
+        "predicted_flow_vph": 822.5,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.216,
+        "travel_cost": 1.143
+      },
+      {
+        "road_id": "5-F1",
+        "from_id": "F1",
+        "to_id": "5",
+        "predicted_flow_vph": 1229.8,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.351,
+        "travel_cost": 0.241
+      },
+      {
+        "road_id": "2-F1",
+        "from_id": "F1",
+        "to_id": "2",
+        "predicted_flow_vph": 1111.0,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.347,
+        "travel_cost": 0.305
+      },
+      {
+        "road_id": "3-F2",
+        "from_id": "F2",
+        "to_id": "3",
+        "predicted_flow_vph": 938.2,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.469,
+        "travel_cost": 0.085
+      },
+      {
+        "road_id": "15-F7",
+        "from_id": "F7",
+        "to_id": "15",
+        "predicted_flow_vph": 539.5,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.193,
+        "travel_cost": 0.275
+      },
+      {
+        "road_id": "4-F8",
+        "from_id": "F8",
+        "to_id": "4",
+        "predicted_flow_vph": 623.0,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.208,
+        "travel_cost": 0.196
+      }
+    ],
+    "Next Morning Forecast": [
+      {
+        "road_id": "1-3",
+        "from_id": "1",
+        "to_id": "3",
+        "predicted_flow_vph": 2780.4,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.927,
+        "travel_cost": 0.444
+      },
+      {
+        "road_id": "1-8",
+        "from_id": "1",
+        "to_id": "8",
+        "predicted_flow_vph": 2095.4,
+        "capacity_vph": 2500,
+        "congestion_ratio": 0.838,
+        "travel_cost": 0.294
+      },
+      {
+        "road_id": "2-3",
+        "from_id": "2",
+        "to_id": "3",
+        "predicted_flow_vph": 2749.2,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.982,
+        "travel_cost": 0.324
+      },
+      {
+        "road_id": "2-5",
+        "from_id": "2",
+        "to_id": "5",
+        "predicted_flow_vph": 2922.7,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.913,
+        "travel_cost": 0.198
+      },
+      {
+        "road_id": "3-5",
+        "from_id": "3",
+        "to_id": "5",
+        "predicted_flow_vph": 3250.6,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.929,
+        "travel_cost": 0.319
+      },
+      {
+        "road_id": "3-6",
+        "from_id": "3",
+        "to_id": "6",
+        "predicted_flow_vph": 1817.3,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.909,
+        "travel_cost": 0.16
+      },
+      {
+        "road_id": "3-9",
+        "from_id": "3",
+        "to_id": "9",
+        "predicted_flow_vph": 2363.7,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.909,
+        "travel_cost": 0.234
+      },
+      {
+        "road_id": "3-10",
+        "from_id": "3",
+        "to_id": "10",
+        "predicted_flow_vph": 2145.4,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.894,
+        "travel_cost": 0.19
+      },
+      {
+        "road_id": "2-4",
+        "from_id": "4",
+        "to_id": "2",
+        "predicted_flow_vph": 3546.9,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.933,
+        "travel_cost": 0.772
+      },
+      {
+        "road_id": "4-14",
+        "from_id": "4",
+        "to_id": "14",
+        "predicted_flow_vph": 2762.8,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.921,
+        "travel_cost": 0.26
+      },
+      {
+        "road_id": "5-11",
+        "from_id": "5",
+        "to_id": "11",
+        "predicted_flow_vph": 2897.4,
+        "capacity_vph": 3100,
+        "congestion_ratio": 0.935,
+        "travel_cost": 0.417
+      },
+      {
+        "road_id": "6-9",
+        "from_id": "6",
+        "to_id": "9",
+        "predicted_flow_vph": 1661.6,
+        "capacity_vph": 1800,
+        "congestion_ratio": 0.923,
+        "travel_cost": 0.112
+      },
+      {
+        "road_id": "7-8",
+        "from_id": "7",
+        "to_id": "8",
+        "predicted_flow_vph": 3193.3,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.912,
+        "travel_cost": 1.233
+      },
+      {
+        "road_id": "7-15",
+        "from_id": "7",
+        "to_id": "15",
+        "predicted_flow_vph": 2726.5,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.909,
+        "travel_cost": 0.482
+      },
+      {
+        "road_id": "8-10",
+        "from_id": "8",
+        "to_id": "10",
+        "predicted_flow_vph": 2028.3,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.922,
+        "travel_cost": 0.171
+      },
+      {
+        "road_id": "8-12",
+        "from_id": "8",
+        "to_id": "12",
+        "predicted_flow_vph": 2356.0,
+        "capacity_vph": 2600,
+        "congestion_ratio": 0.906,
+        "travel_cost": 0.781
+      },
+      {
+        "road_id": "9-10",
+        "from_id": "9",
+        "to_id": "10",
+        "predicted_flow_vph": 1658.9,
+        "capacity_vph": 1900,
+        "congestion_ratio": 0.873,
+        "travel_cost": 0.102
+      },
+      {
+        "road_id": "10-11",
+        "from_id": "10",
+        "to_id": "11",
+        "predicted_flow_vph": 2100.1,
+        "capacity_vph": 2400,
+        "congestion_ratio": 0.875,
+        "travel_cost": 0.433
+      },
+      {
+        "road_id": "11-F2",
+        "from_id": "11",
+        "to_id": "F2",
+        "predicted_flow_vph": 2119.2,
+        "capacity_vph": 2200,
+        "congestion_ratio": 0.963,
+        "travel_cost": 0.197
+      },
+      {
+        "road_id": "1-12",
+        "from_id": "12",
+        "to_id": "1",
+        "predicted_flow_vph": 2648.9,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.946,
+        "travel_cost": 0.691
+      },
+      {
+        "road_id": "4-13",
+        "from_id": "13",
+        "to_id": "4",
+        "predicted_flow_vph": 3660.8,
+        "capacity_vph": 4000,
+        "congestion_ratio": 0.915,
+        "travel_cost": 2.189
+      },
+      {
+        "road_id": "13-14",
+        "from_id": "14",
+        "to_id": "13",
+        "predicted_flow_vph": 3566.5,
+        "capacity_vph": 3800,
+        "congestion_ratio": 0.939,
+        "travel_cost": 1.815
+      },
+      {
+        "road_id": "5-F1",
+        "from_id": "F1",
+        "to_id": "5",
+        "predicted_flow_vph": 3226.4,
+        "capacity_vph": 3500,
+        "congestion_ratio": 0.922,
+        "travel_cost": 0.375
+      },
+      {
+        "road_id": "2-F1",
+        "from_id": "F1",
+        "to_id": "2",
+        "predicted_flow_vph": 2930.7,
+        "capacity_vph": 3200,
+        "congestion_ratio": 0.916,
+        "travel_cost": 0.465
+      },
+      {
+        "road_id": "3-F2",
+        "from_id": "F2",
+        "to_id": "3",
+        "predicted_flow_vph": 1905.7,
+        "capacity_vph": 2000,
+        "congestion_ratio": 0.953,
+        "travel_cost": 0.135
+      },
+      {
+        "road_id": "15-F7",
+        "from_id": "F7",
+        "to_id": "15",
+        "predicted_flow_vph": 2586.0,
+        "capacity_vph": 2800,
+        "congestion_ratio": 0.924,
+        "travel_cost": 0.424
+      },
+      {
+        "road_id": "4-F8",
+        "from_id": "F8",
+        "to_id": "4",
+        "predicted_flow_vph": 2808.3,
+        "capacity_vph": 3000,
+        "congestion_ratio": 0.936,
+        "travel_cost": 0.311
+      }
+    ]
+  },
+  "hotspots": [
+    {
+      "road_id": "2-3",
+      "from_id": "2",
+      "to_id": "3",
+      "predicted_flow_vph": 2749.2,
+      "capacity_vph": 2800,
+      "congestion_ratio": 0.982,
+      "travel_cost": 0.324
+    },
+    {
+      "road_id": "11-F2",
+      "from_id": "11",
+      "to_id": "F2",
+      "predicted_flow_vph": 2119.2,
+      "capacity_vph": 2200,
+      "congestion_ratio": 0.963,
+      "travel_cost": 0.197
+    },
+    {
+      "road_id": "3-F2",
+      "from_id": "F2",
+      "to_id": "3",
+      "predicted_flow_vph": 1905.7,
+      "capacity_vph": 2000,
+      "congestion_ratio": 0.953,
+      "travel_cost": 0.135
+    },
+    {
+      "road_id": "1-12",
+      "from_id": "12",
+      "to_id": "1",
+      "predicted_flow_vph": 2648.9,
+      "capacity_vph": 2800,
+      "congestion_ratio": 0.946,
+      "travel_cost": 0.691
+    },
+    {
+      "road_id": "13-14",
+      "from_id": "14",
+      "to_id": "13",
+      "predicted_flow_vph": 3566.5,
+      "capacity_vph": 3800,
+      "congestion_ratio": 0.939,
+      "travel_cost": 1.815
+    },
+    {
+      "road_id": "4-F8",
+      "from_id": "F8",
+      "to_id": "4",
+      "predicted_flow_vph": 2808.3,
+      "capacity_vph": 3000,
+      "congestion_ratio": 0.936,
+      "travel_cost": 0.311
+    }
+  ],
+  "recommended_new_roads": [
+    {
+      "from_id": "9",
+      "to_id": "11",
+      "road_id": "9-11",
+      "distance_km": 6.9,
+      "estimated_capacity_vph": 2800,
+      "construction_cost_million_egp": 140,
+      "score": 136.957
+    },
+    {
+      "from_id": "6",
+      "to_id": "8",
+      "road_id": "6-8",
+      "distance_km": 7.5,
+      "estimated_capacity_vph": 2500,
+      "construction_cost_million_egp": 150,
+      "score": 68.0
+    },
+    {
+      "from_id": "5",
+      "to_id": "4",
+      "road_id": "4-5",
+      "distance_km": 16.8,
+      "estimated_capacity_vph": 3500,
+      "construction_cost_million_egp": 320,
+      "score": 24.414
+    },
+    {
+      "from_id": "1",
+      "to_id": "4",
+      "road_id": "1-4",
+      "distance_km": 22.8,
+      "estimated_capacity_vph": 4000,
+      "construction_cost_million_egp": 450,
+      "score": 20.37
+    },
+    {
+      "from_id": "14",
+      "to_id": "5",
+      "road_id": "5-14",
+      "distance_km": 18.2,
+      "estimated_capacity_vph": 3300,
+      "construction_cost_million_egp": 360,
+      "score": 12.222
+    }
+  ]
+};
