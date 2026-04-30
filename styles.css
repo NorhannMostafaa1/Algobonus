@@ -1,19 +1,19 @@
 :root {
-  --bg: #efe3d2;
-  --bg-deep: #d8c2ab;
-  --panel: rgba(252, 247, 240, 0.88);
-  --panel-strong: rgba(255, 251, 246, 0.96);
-  --ink: #19252f;
-  --muted: #64727b;
-  --line: rgba(25, 37, 47, 0.1);
-  --accent: #0f6c78;
-  --accent-strong: #0b4e57;
-  --signal: #c46f34;
-  --good: #3c8e72;
-  --warn: #d19a2b;
-  --bad: #cf6d44;
-  --critical: #9b3930;
-  --shadow: 0 22px 56px rgba(53, 40, 26, 0.12);
+  --bg: #130f3d;
+  --bg-deep: #090621;
+  --panel: rgba(26, 20, 86, 0.78);
+  --panel-strong: rgba(39, 31, 118, 0.9);
+  --ink: #f8f5ff;
+  --muted: #c7c2f2;
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #00d1b2;
+  --accent-strong: #00a5ff;
+  --signal: #ff7a18;
+  --good: #2ee59d;
+  --warn: #ffd23f;
+  --bad: #ff6b6b;
+  --critical: #ff2e88;
+  --shadow: 0 24px 60px rgba(3, 2, 18, 0.4);
 }
 
 * {
@@ -26,9 +26,10 @@ body {
   color: var(--ink);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 12% 12%, rgba(15, 108, 120, 0.16), transparent 28%),
-    radial-gradient(circle at 86% 14%, rgba(196, 111, 52, 0.18), transparent 26%),
-    linear-gradient(180deg, #f6ecdf 0%, var(--bg) 48%, var(--bg-deep) 100%);
+    radial-gradient(circle at 8% 10%, rgba(0, 209, 178, 0.26), transparent 24%),
+    radial-gradient(circle at 92% 14%, rgba(255, 122, 24, 0.24), transparent 22%),
+    radial-gradient(circle at 50% 120%, rgba(255, 46, 136, 0.16), transparent 34%),
+    linear-gradient(180deg, #251a80 0%, var(--bg) 48%, var(--bg-deep) 100%);
 }
 
 .shell {
@@ -80,7 +81,7 @@ h1 {
 .hero-metrics,
 .panel {
   background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
 }
@@ -99,7 +100,7 @@ h1 {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(15, 108, 120, 0.18), transparent 68%);
+  background: radial-gradient(circle, rgba(0, 209, 178, 0.24), transparent 68%);
   pointer-events: none;
 }
 
@@ -111,11 +112,28 @@ h1 {
   padding: 18px;
 }
 
+.hero-metrics article,
+.panel,
+.card,
+.stat-pill,
+.log,
+.map-note span {
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
 .hero-metrics article {
   background: var(--panel-strong);
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 16px 18px;
+}
+
+.hero-metrics article:hover,
+.panel:hover,
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
 }
 
 .hero-metrics span {
@@ -143,16 +161,10 @@ h1 {
   padding: 20px;
 }
 
-.controls {
-  grid-column: span 3;
-}
-
+.controls,
+.board,
 .insights {
-  grid-column: span 3;
-}
-
-.board {
-  grid-column: span 6;
+  grid-column: span 12;
 }
 
 .algorithm {
@@ -191,6 +203,13 @@ label {
   font-weight: 700;
 }
 
+.control-strip {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
 select,
 button {
   width: 100%;
@@ -201,9 +220,18 @@ button {
 }
 
 select {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(25, 37, 47, 0.08);
+  background: rgba(12, 10, 42, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--ink);
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+select:hover,
+select:focus {
+  border-color: rgba(0, 209, 178, 0.6);
+  background: rgba(18, 15, 58, 0.82);
+  transform: translateY(-1px);
+  outline: none;
 }
 
 .button-row {
@@ -222,25 +250,27 @@ button {
 
 button:hover {
   transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.24);
 }
 
 #raceButton {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #f8fcfd;
-  box-shadow: 0 12px 26px rgba(15, 108, 120, 0.22);
+  color: #07131e;
+  box-shadow: 0 16px 28px rgba(0, 165, 255, 0.28);
 }
 
 button.ghost {
-  background: #ead8c5;
-  color: var(--ink);
+  background: linear-gradient(135deg, #ff8b5c, #ff5f6d);
+  color: #fff8fb;
 }
 
 .legend {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 18px;
   padding-top: 16px;
-  border-top: 1px solid rgba(25, 37, 47, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--muted);
   font-size: 0.92rem;
 }
@@ -260,6 +290,7 @@ button.ghost {
 
 .cards {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -268,7 +299,7 @@ button.ghost {
 .log,
 .map-note span {
   background: var(--panel-strong);
-  border: 1px solid rgba(25, 37, 47, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card {
@@ -306,27 +337,27 @@ button.ghost {
 
 #networkSvg {
   width: 100%;
-  height: 560px;
+  height: 620px;
   border-radius: 24px;
   background:
-    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.78), transparent 28%),
-    radial-gradient(circle at 84% 18%, rgba(15, 108, 120, 0.14), transparent 24%),
-    linear-gradient(180deg, rgba(225, 235, 237, 0.78), rgba(243, 233, 220, 0.94)),
+    radial-gradient(circle at 18% 16%, rgba(0, 209, 178, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(255, 122, 24, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(26, 20, 86, 0.88), rgba(15, 12, 58, 0.94)),
     repeating-linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.16) 0,
-      rgba(255, 255, 255, 0.16) 1px,
+      rgba(255, 255, 255, 0.08) 0,
+      rgba(255, 255, 255, 0.08) 1px,
       transparent 1px,
       transparent 72px
     );
-  border: 1px solid rgba(25, 37, 47, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .edge {
   fill: none;
   stroke-linecap: round;
   transition: stroke 180ms ease, opacity 180ms ease, stroke-width 180ms ease, filter 180ms ease;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.52));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.16));
 }
 
 .edge.active-dijkstra,
@@ -350,9 +381,15 @@ button.ghost {
 }
 
 .node circle {
-  fill: #fffdf8;
-  stroke: rgba(25, 37, 47, 0.26);
+  fill: #fff5db;
+  stroke: rgba(255, 255, 255, 0.34);
   stroke-width: 2.2;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.node:hover circle {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.42));
 }
 
 .node.visited-dijkstra circle {
@@ -365,17 +402,17 @@ button.ghost {
 
 .node-label-bg {
   fill: rgba(255, 251, 246, 0.92);
-  stroke: rgba(25, 37, 47, 0.08);
+  stroke: rgba(255, 255, 255, 0.14);
   stroke-width: 1;
 }
 
 .node.facility circle {
-  fill: #ecf7f9;
-  stroke: rgba(15, 108, 120, 0.4);
+  fill: #c4fff4;
+  stroke: rgba(0, 209, 178, 0.54);
 }
 
 .node.facility .node-label-bg {
-  fill: rgba(236, 247, 249, 0.96);
+  fill: rgba(212, 255, 246, 0.94);
 }
 
 .node.start circle,
@@ -421,13 +458,13 @@ button.ghost {
   overflow: auto;
   border-radius: 20px;
   padding: 12px 14px;
-  color: #30414a;
+  color: #e9e4ff;
   line-height: 1.58;
 }
 
 .log-entry {
   padding: 8px 0;
-  border-bottom: 1px dashed rgba(25, 37, 47, 0.09);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
 .log-entry:last-child {
@@ -440,12 +477,12 @@ button.ghost {
 
 .map-caption {
   font-size: 12px;
-  fill: rgba(25, 37, 47, 0.7);
+  fill: rgba(255, 255, 255, 0.88);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 .map-caption-subtle {
-  fill: rgba(25, 37, 47, 0.48);
+  fill: rgba(214, 208, 255, 0.76);
 }
 
 @media (max-width: 1180px) {
@@ -455,14 +492,26 @@ button.ghost {
   }
 
   .controls,
-  .insights,
   .board,
+  .insights,
   .algorithm {
     grid-column: span 1;
   }
 
   .hero-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .control-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -477,12 +526,12 @@ button.ghost {
     border-radius: 22px;
   }
 
-  .hero-metrics {
-    grid-template-columns: 1fr;
-  }
-
+  .hero-metrics,
   .button-row,
-  .stat-box {
+  .stat-box,
+  .control-strip,
+  .legend,
+  .cards {
     grid-template-columns: 1fr;
   }
 

@@ -36,23 +36,25 @@
         <section class="panel controls">
           <div class="panel-heading">
             <h2>Scenario Controls</h2>
-            <p>Pick a time slice, then launch both algorithms on the same predicted network.</p>
+            <p>Choose the traffic window, set the route, then launch the side-by-side search comparison.</p>
           </div>
-          <label>
-            Scenario
-            <select id="scenarioSelect"></select>
-          </label>
-          <label>
-            Start
-            <select id="startSelect"></select>
-          </label>
-          <label>
-            Destination
-            <select id="endSelect"></select>
-          </label>
-          <div class="button-row">
-            <button id="raceButton">Run Race</button>
-            <button id="resetButton" class="ghost">Reset</button>
+          <div class="control-strip">
+            <label>
+              Scenario
+              <select id="scenarioSelect"></select>
+            </label>
+            <label>
+              Start
+              <select id="startSelect"></select>
+            </label>
+            <label>
+              Destination
+              <select id="endSelect"></select>
+            </label>
+            <div class="button-row">
+              <button id="raceButton">Run Race</button>
+              <button id="resetButton" class="ghost">Reset</button>
+            </div>
           </div>
           <div class="legend">
             <span><i class="swatch low"></i>Low congestion</span>
@@ -60,14 +62,6 @@
             <span><i class="swatch high"></i>Heavy</span>
             <span><i class="swatch extreme"></i>Critical</span>
           </div>
-        </section>
-
-        <section class="panel insights">
-          <div class="panel-heading">
-            <h2>Forecast Highlights</h2>
-            <p>Most stressed segments for the selected scenario.</p>
-          </div>
-          <div id="hotspotCards" class="cards"></div>
         </section>
 
         <section class="panel board">
@@ -99,6 +93,14 @@
           </div>
           <div id="astarStats" class="stat-box"></div>
           <div id="astarLog" class="log"></div>
+        </section>
+
+        <section class="panel insights">
+          <div class="panel-heading">
+            <h2>Forecast Highlights</h2>
+            <p>Most stressed segments for the selected scenario.</p>
+          </div>
+          <div id="hotspotCards" class="cards"></div>
         </section>
       </main>
     </div>
